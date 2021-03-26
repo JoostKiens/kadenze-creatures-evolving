@@ -25,7 +25,7 @@ function preload() {
 }
 
 function setup() {
-  var canvas = createCanvas(windowWidth, 500)
+  var canvas = createCanvas(windowWidth, windowHeight)
   canvas.parent('canvas')
   initWorld()
 }
