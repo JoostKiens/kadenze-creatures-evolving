@@ -15,7 +15,7 @@
 var attractor
 var population
 var target
-// Variable for backround alpha variation (trails)
+// Variable for background alpha variation (trails)
 var alphaOff
 var myFont
 
