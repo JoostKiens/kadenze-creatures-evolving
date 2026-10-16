@@ -20,7 +20,8 @@ function DNA(newGenes) {
   }
 
   this.copy = function () {
-    return new DNA(this.genes.slice(0))
+    // Copy each gene object, otherwise parent and child would share (and mutate) the same genes
+    return new DNA(this.genes.map(function (gene) { return Object.assign({}, gene) }))
   }
 
   // Based on a mutation probability, picks a new random trait
@@ -28,17 +29,17 @@ function DNA(newGenes) {
     for (var i = 0; i < this.genes.length; i++) {
       if (random(1) < m) {
         var newGenes = getRandomGenes()
-        var randomTrait = randomProperty(newGenes)
+        var randomTrait = randomKey(newGenes)
         this.genes[i][randomTrait] = newGenes[randomTrait]
       }
     }
   }
 }
 
-// Get a random key from ab object
-function randomProperty (obj) {
+// Get a random key from an object
+function randomKey (obj) {
   var keys = Object.keys(obj)
-  return obj[keys[ keys.length * Math.random() << 0]]
+  return keys[ keys.length * Math.random() << 0]
 }
 
 // Default settings for DNA
