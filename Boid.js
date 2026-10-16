@@ -221,6 +221,7 @@ function Boid(x, y, target, dna_) {
     var c = color(this.fill)
     fill(red(c), green(c), blue(c), map(this.health, 0, 200, 0, 255))
     noStroke()
-    ellipse(this.position.x, this.position.y, this.mass * 2, this.mass * 2)
+    // Diameter = mass: masses here go up to 8 (up to 4 in the first boids, drawn at mass * 2), so this keeps the same size
+    ellipse(this.position.x, this.position.y, this.mass, this.mass)
   }
 }

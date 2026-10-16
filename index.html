@@ -24,6 +24,11 @@
     margin: 0;
     padding: 0;
   }
+
+  /* Canvases are inline by default, which leaves a gap below them and causes scrollbars */
+  canvas {
+    display: block;
+  }
 </style>
 <body>
   <div id="canvas"></div>
