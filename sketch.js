@@ -30,6 +30,10 @@ function setup() {
   initWorld()
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight)
+}
+
 // Starts world with target, population attractor
 function initWorld() {
   alphaOff = random(100)
